@@ -4,8 +4,11 @@ MAINTAINER Alexander Rampp <dev@axgr.de>
 RUN pacman -S --noconfirm firefox \
                           firefox-i18n-de \
                           firefox-adblock-plus \
-                          arch-firefox-search \
-                          xorg-fonts-100dpi
+                          arch-firefox-search
+
+RUN pacman -S --noconfirm xorg-fonts-100dpi \
+                          ttf-dejavu \
+                          ttf-bitstream-vera
 
 RUN useradd -d /home/user -m user
 
