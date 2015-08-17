@@ -1,0 +1,33 @@
+# Maintainer: Alexander Rampp <dev[at]axgr[dot]de>
+pkgname=firefox-docker
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Firefox running in a docker container."
+url="http://www.foo.tld"
+arch=('x86_64' 'i686')
+license=('MIT')
+depends=('docker')
+optdepends=('java-runtime')
+makedepends=()
+conflicts=()
+replaces=()
+backup=()
+#install='foo.install'
+source=("${pkgname}-${pkgver}.tar.bz2")
+md5sums=('be1072ecda331287e66c64103e883215')
+
+
+
+
+build() {
+    # nothing todo
+    true
+}
+
+package() {
+  cd "${srcdir}"
+  make DESTDIR="${pkgdir}" install
+  #install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}
+
+# vim:set ts=2 sw=2 et:
